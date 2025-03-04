@@ -4,7 +4,19 @@
  *
  * See the individual environment DB configs for specific config information.
  */
-
-return array(
-
-);
+ return array(
+     'default' => array(
+         'type'        => 'mysqli',
+         'connection'  => array(
+             'hostname'   => 'db',
+             'port'       => '3306',
+             'database'   => 'fuelphp_todo',
+             'username'   => 'root',
+             'password'   => 'root',
+             'persistent' => false,
+         ),
+         'charset'     => 'utf8',
+         'caching'     => false,
+         'profiling'   => false,
+     ),
+ );

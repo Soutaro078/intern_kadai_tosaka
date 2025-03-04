@@ -22,6 +22,8 @@ services:
       MYSQL_DATABASE: fuelphp_todo
     ports:
       - "3306:3306"
+    volumes:
+    - ./docker/db/init.sql:/docker-entrypoint-initdb.d/init.sql 
     networks:
       - fuelphp-network
 
