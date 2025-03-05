@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サインイン - Todoアプリ</title>
+    <script src="https://cdn.jsdelivr.net/npm/knockout@3.5.1/build/knockout.js"></script>
+    <script src="js/auth.js" defer></script>
+</head>
+<body>
+    <h2>Todoアプリ - サインイン</h2>
+    <form data-bind="submit: login">
+        <label>ユーザー名:</label>
+        <input type="text" data-bind="value: username" required>
+        <br>
+        <label>パスワード:</label>
+        <input type="password" data-bind="value: password" required>
+        <br>
+        <button type="submit">サインイン</button>
+    </form>
+    <p><a href="signup.html">新規作成</a></p>
+</body>
+</html>
