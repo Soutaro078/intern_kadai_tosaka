@@ -8,7 +8,7 @@ use Auth\Auth;
 class Controller_Tasks extends Controller
 {
 
-    //beforeメソッドを追加（認証されているユーザーのみが操作可能なため）
+    //beforeメソッドを追加（認証されているユーザーのみが操作可能にする）
     public function before()
     {
         parent::before(); // 親クラスの before() を実行
