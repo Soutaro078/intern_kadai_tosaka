@@ -2,6 +2,19 @@
 return array(
 	'_root_'  => 'welcome/index',  // The default route
 	'_404_'   => 'welcome/404',    // The main 404 route
+
+    // 🔹 認証ページ (HTML を表示するルート)
+    'signup' => 'user/signup_page',  // signup.html を表示
+    'signin' => 'user/signin_page',  // signin.html を表示
+
+    // 🔹 `home` ページのルート
+    'home' => 'user/home',
+
+    // 🔹 他のページ
+    'list_create' => 'user/list_create',
+    'task_create' => 'user/task_create',
+    'task_edit' => 'user/task_edit',
+
 	'hello(/:name)?' => array('welcome/hello', 'name' => 'hello'),
     'api/signup' => 'user/signup', // ユーザー登録API
     'api/signin' => 'user/signin', // サインインAPI

@@ -12,11 +12,14 @@ services:
       - ../:/var/www/html/my_fuel_project
     networks:
       - fuelphp-network
+    depends_on:
+      - db
 
   db:
     build:
       context: ../
       dockerfile: docker/db/Dockerfile
+    container_name: db
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: fuelphp_todo
