@@ -103,3 +103,10 @@ WARNING - 2025-03-07 16:14:00 --> Fuel\Core\Fuel::init - The configured locale e
 WARNING - 2025-03-07 16:17:42 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
 WARNING - 2025-03-07 16:18:13 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
 WARNING - 2025-03-07 16:26:58 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+WARNING - 2025-03-07 16:48:33 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+WARNING - 2025-03-07 16:48:50 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+WARNING - 2025-03-07 16:48:57 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+WARNING - 2025-03-07 17:12:46 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+WARNING - 2025-03-07 17:18:33 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.
+ERROR - 2025-03-07 17:18:33 --> 3780 - Referencing column 'user_id' and referenced column 'id' in foreign key constraint 'fk_lists_user_id' are incompatible. [ ALTER TABLE lists ADD CONSTRAINT fk_lists_user_id FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE; ] in /var/www/html/my_fuel_project/fuel/core/classes/database/mysqli/connection.php on line 292
+WARNING - 2025-03-07 17:23:05 --> Fuel\Core\Fuel::init - The configured locale en_US is not installed on your system.

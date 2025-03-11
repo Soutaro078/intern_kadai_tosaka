@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>サインアップ - Todoアプリ</title>
     <!-- <link rel="stylesheet" href="/assets/css/style.css">  CSS 読み込み -->
-    
+    <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Knockout.jsの読み込み (auth.js より前に配置) -->
     <script src="https://cdn.jsdelivr.net/npm/knockout@3.5.1/build/output/knockout-latest.js" defer></script>
 

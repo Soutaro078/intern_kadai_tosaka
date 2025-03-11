@@ -14,7 +14,7 @@ class Create_tasks
             'list_id'    => ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'null' => false],
             'title'      => ['type' => 'varchar', 'constraint' => 255, 'null' => false],
             'description'=> ['type' => 'text', 'null' => true],
-            'deadline'   => ['type' => 'date', 'null' => true],
+            'deadline'   => ['type' => 'datetime', 'null' => true],
             'status'     => ['type' => 'enum', 'constraint' => ["未完了", "完了"], 'default' => '未完了'],
             'created_at' => ['type' => 'timestamp', 'default' => DB::expr('CURRENT_TIMESTAMP')],
         ], ['id'], true, 'InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci'); 

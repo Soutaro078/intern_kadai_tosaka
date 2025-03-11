@@ -107,16 +107,44 @@ class Controller_User extends Controller
 
     public function action_signin()
     {
-        // 🔹 `filter_input()` を使ってデータを取得
-        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
+        session_start(); // セッションを開始
+    
+        // JSON でリクエストを受け取る
+        $json = file_get_contents('php://input');
+        $data = json_decode($json, true);
+    
+        if (!isset($data['username']) || !isset($data['password'])) {
+            return Response::forge(Format::forge(['error' => 'Invalid input'])->to_json(), 400);
+        }
+    
+        $username = filter_var($data['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $password = filter_var($data['password'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    
         if (Auth::instance()->login($username, $password)) {
+            $_SESSION['user'] = $username; // 🔹 セッションにユーザー名を保存
             return Response::forge(Format::forge(['message' => 'Login successful'])->to_json(), 200);
         } else {
             return Response::forge(Format::forge(['error' => 'Invalid credentials'])->to_json(), 401);
         }
     }
+
+    public function action_check_session()
+    {
+        session_start();
+    
+        if (isset($_SESSION['user'])) {
+            return Response::forge(Format::forge([
+                'isAuthenticated' => true,
+                'user' => $_SESSION['user']
+            ])->to_json(), 200);
+        } else {
+            return Response::forge(Format::forge([
+                'isAuthenticated' => false
+            ])->to_json(), 401);
+        }
+    }
+    
+    
 
     public function action_signout()
     {

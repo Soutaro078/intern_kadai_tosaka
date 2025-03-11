@@ -313,4 +313,17 @@ return array(
 		// 'language'  => array(),
 	),
 
+	'session' => array(
+			'driver' => 'file',  // 🔹 ここが 'cookie' や 'db' なら 'file' に変更
+			'cookie_name' => 'fuelcid',
+			'expiration_time' => 86400, // 1日（ログイン状態を維持）
+			'rotation_time' => 300,
+			'flash_id' => 'flash',
+			'flash_auto_expire' => true,
+			'cookie_domain' => '',
+			'cookie_path' => '/',
+			'cookie_http_only' => true,
+			'cookie_secure' => false,
+	),
+
 );

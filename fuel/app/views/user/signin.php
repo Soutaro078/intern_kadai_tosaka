@@ -10,12 +10,12 @@
 </head>
 <body>
     <h2>Todoアプリ - サインイン</h2>
-    <form id="signinForm">
+    <form id="signinForm" data-bind="submit: login">
         <label>ユーザー名:</label>
-        <input type="text" id="username" required>
+        <input type="text" id="username" data-bind="value: username" required>
         <br>
         <label>パスワード:</label>
-        <input type="password" id="password" required>
+        <input type="password" id="password" data-bind="value: password" required>
         <br>
         <button type="submit">サインイン</button>
     </form>

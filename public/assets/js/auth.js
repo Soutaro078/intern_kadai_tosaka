@@ -7,6 +7,9 @@ function AuthViewModel() {
 
     // 🔹 サインイン処理 (usernameを使用)
     self.login = function() {
+
+        console.log("ログインボタンが押されました"); // ← デバッグログ追加
+
         fetch("/api/signin", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -18,8 +21,8 @@ function AuthViewModel() {
         .then(response => response.json())
         .then(data => {
             if (data.message === "Login successful") {
-                alert("ログイン成功！");
-                window.location.href = "home.html"; // ホームへリダイレクト
+                alert("ログイン成功したよ！");
+                window.location.href = "home.php"; // ホームへリダイレクト
             } else {
                 alert("ログイン失敗: " + data.error);
             }
@@ -45,10 +48,10 @@ function AuthViewModel() {
         .then(data => {
             if (data.message === "User created") {
                 alert("アカウント作成成功！サインインしてください");
-                window.location.href = "signin.html";
+                window.location.href = "signin.php"; // サインインページへリダイレクト
             } else {
-                // alert("アカウント作成失敗: " + data.error);
-                alert("アカウント作成失敗");
+                alert("アカウント作成失敗だよーん: " + data.error);
+                // alert("アカウント作成失敗");
             }
         })
         .catch(error => console.error("Error:", error));

@@ -6,7 +6,8 @@
 return array(
 	'default' => array(
 		'connection'  => array(
-			'dsn'        => 'mysql:host=localhost;dbname=fuel_dev',
+			// 'dsn'        => 'mysql:host=localhost;dbname=fuel_dev',
+			'dsn'        => 'mysql:host=db;dbname=fuelphp_todo',
 			'username'   => 'root',
 			'password'   => 'root',
 		),

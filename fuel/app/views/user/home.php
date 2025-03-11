@@ -22,10 +22,12 @@
     <ul data-bind="foreach: lists">
         <li>
             <a href="#" data-bind="text: title, click: $parent.selectList"></a>
+            <button class="delete-list-btn" data-bind="click: $parent.deleteList">削除</button>
+            <!-- <a href="#" data-bind="text: title, click: $parent.fetchTasksByList"></a> -->
         </li>
     </ul>
 
-    <div class="tasks">
+    <!-- <div class="tasks">
         <h2>タスク一覧</h2>
         <a href="/task_create">タスク新規作成</a>
         <ul data-bind="foreach: tasks">
@@ -34,6 +36,22 @@
                 <span data-bind="text: status"></span>
                 <a href="#" data-bind="attr: { href: '/task_edit?id=' + id }">編集</a>
                 <button data-bind="click: $parent.deleteTask">削除</button>
+            </li>
+        </ul>
+    </div> -->
+    <div class="tasks">
+        <h2>タスク一覧</h2>
+        <a href="/task_create">タスク新規作成</a>
+        <ul data-bind="foreach: tasks">
+            <li>
+                <div class="task-left">
+                    <span data-bind="text: title"></span>
+                    <span data-bind="text: status"></span>
+                </div>
+                <div class="task-right">
+                    <a href="#" class="edit-btn" data-bind="attr: { href: '/task_edit?id=' + id }">編集</a>
+                    <button class="delete-btn" data-bind="click: $parent.deleteTask">削除</button>
+                </div>
             </li>
         </ul>
     </div>
